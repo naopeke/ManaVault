@@ -1,0 +1,24 @@
+<p>login works!</p>
+
+<div class="card">
+    <h1>Login</h1>
+    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
+        <form >
+        <input 
+            pInputText
+            class="ng-invalid ng-dirty"
+            formControlName="email"
+            placeholder="Email"
+        />
+        <input 
+            pInputText
+            class="ng-invalid ng-dirty"
+            formControlName="password"
+            type="password"
+            placeholder="Password"
+        />
+        <div class="card flex justify-content-center">
+            <p-button label="Login" />
+        </div>
+    </form>
+</div>

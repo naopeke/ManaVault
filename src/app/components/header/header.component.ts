@@ -72,7 +72,6 @@ export class HeaderComponent implements OnInit{
           {
               label: 'Contact',
               icon: 'pi pi-envelope',
-              badge: '3'
           }
       ];
   }
