@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, FormsModule, InputGroupModule, InputGroupAddonModule, InputTextModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  imports: [FormsModule, InputGroupModule, InputGroupAddonModule, InputTextModule, ButtonModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class LoginComponent {
+export class HomeComponent {
 
 }

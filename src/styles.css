@@ -1,3 +1,29 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+
+:root {
+    /* typography */
+    --white:#B3B3B3;
+    
+    --antiqua:"Uncial Antiqua", system-ui;
+    --inter: "Inter", sans-serif;
+
+    --opacidad-fondo-textura: 0.35;
+
+    --negro-bg: rgba(0, 0, 0, 0.85);
+    
+    
+    /* border radius*/
+    --borde-input:10px;
+
+     /* todos los cuadrados como modals */
+    --borde-cuadrado:20px;
+    
+    --borde-boton:10px;
+
+    /* border width */
+    --ancho-borde: 3px;
+
+}
+

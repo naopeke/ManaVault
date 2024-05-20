@@ -1,17 +1,15 @@
 
+
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
-import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
-import { InputTextModule } from 'primeng/inputtext';
-import { CommonModule } from '@angular/common';
-import { RippleModule } from 'primeng/ripple';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MenubarModule, BadgeModule, AvatarModule, InputTextModule, RippleModule, CommonModule],
+  imports: [MenubarModule, AvatarModule,  RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -23,33 +21,29 @@ export class HeaderComponent implements OnInit{
       this.items = [
           {
               label: 'Home',
-              icon: 'pi pi-home'
+              icon: 'pi pi-home',
+              routerLink: '/'
           },
           {
-              label: 'Features',
-              icon: 'pi pi-star'
-          },
+            label: 'Advanced Search',
+            icon: 'pi pi-search',
+            routerLink: '/advanced'
+        },
           {
-              label: 'Projects',
-              icon: 'pi pi-search',
+              label: 'Deck Builder',
+              icon: 'pi pi-star',
               items: [
                   {
-                      label: 'Core',
-                      icon: 'pi pi-bolt',
-                      shortcut: '⌘+S'
+                      label: 'All',
+                      icon: 'pi pi-bolt'
                   },
                   {
-                      label: 'Blocks',
-                      icon: 'pi pi-server',
-                      shortcut: '⌘+B'
+                      label: 'Add',
+                      icon: 'pi pi-server'
                   },
                   {
-                      label: 'UI Kit',
-                      icon: 'pi pi-pencil',
-                      shortcut: '⌘+U'
-                  },
-                  {
-                      separator: true
+                      label: 'Edit',
+                      icon: 'pi pi-pencil'
                   },
                   {
                       label: 'Templates',
@@ -57,13 +51,11 @@ export class HeaderComponent implements OnInit{
                       items: [
                           {
                               label: 'Apollo',
-                              icon: 'pi pi-palette',
-                              badge: '2'
+                              icon: 'pi pi-palette'
                           },
                           {
                               label: 'Ultima',
-                              icon: 'pi pi-palette',
-                              badge: '3'
+                              icon: 'pi pi-palette'
                           }
                       ]
                   }
@@ -71,9 +63,8 @@ export class HeaderComponent implements OnInit{
           },
           {
               label: 'Contact',
-              icon: 'pi pi-envelope',
+              icon: 'pi pi-envelope'
           }
-      ];
+      ]
   }
-
 }

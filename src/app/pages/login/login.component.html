@@ -3,8 +3,21 @@
 <div class="card">
     <h1>Login</h1>
     <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
-        <form >
-        <input 
+        <!-- <form > -->
+            <div class="card flex flex-column md:flex-row gap-3">
+            <p-inputGroup>
+                <p-inputGroupAddon>
+                    <i class="pi pi-user"></i>
+                </p-inputGroupAddon>
+                <input pInputText placeholder="Username" />
+            </p-inputGroup>
+            <p-inputGroup>
+                <p-inputGroupAddon>$</p-inputGroupAddon>
+                <input type="text" pInputText placeholder="Price" />
+                <p-inputGroupAddon>.00</p-inputGroupAddon>
+            </p-inputGroup>
+       
+            <!-- <input 
             pInputText
             class="ng-invalid ng-dirty"
             formControlName="email"
@@ -16,9 +29,11 @@
             formControlName="password"
             type="password"
             placeholder="Password"
-        />
+        /> -->
         <div class="card flex justify-content-center">
             <p-button label="Login" />
         </div>
-    </form>
+
+    </div>
+    <!-- </form> -->
 </div>
