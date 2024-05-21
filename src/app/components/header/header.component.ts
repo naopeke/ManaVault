@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit{
           {
             label: 'Home',
             icon: 'pi pi-home',
-            routerLink: ['/'],
+            routerLink: '/',
           },
           {
             label: 'Advanced Search',
@@ -65,7 +65,8 @@ export class HeaderComponent implements OnInit{
           },
           {
               label: 'Contact',
-              icon: 'pi pi-envelope'
+              icon: 'pi pi-envelope',
+              routerLink: 'contact',
           }
       ]
   }
