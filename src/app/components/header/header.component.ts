@@ -4,12 +4,14 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { AvatarModule } from 'primeng/avatar';
+import { CommonModule } from '@angular/common';
+import { RippleModule } from 'primeng/ripple';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MenubarModule, AvatarModule,  RouterModule],
+  imports: [MenubarModule, AvatarModule, CommonModule, RippleModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -20,14 +22,14 @@ export class HeaderComponent implements OnInit{
   ngOnInit() {
       this.items = [
           {
-              label: 'Home',
-              icon: 'pi pi-home',
-              routerLink: '/'
+            label: 'Home',
+            icon: 'pi pi-home',
+            routerLink: ['/'],
           },
           {
             label: 'Advanced Search',
             icon: 'pi pi-search',
-            routerLink: '/advanced'
+            routerLink: 'advanced'
         },
           {
               label: 'Deck Builder',

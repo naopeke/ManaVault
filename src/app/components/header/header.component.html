@@ -2,11 +2,11 @@
     <p-menubar [model]="items">
         <ng-template pTemplate="start">
             <a [routerLink]="'/'">
-                <img src="./assets/images/logo.png" alt="Logo" width="40" height="40" />
+                <img src="https://i.postimg.cc/BQW1LG3Y/logo.png" alt="Logo" width="40" height="40" />
             </a>
         </ng-template>
         <ng-template pTemplate="item" let-item let-root="root">
-            <a pRipple class="flex align-items-center p-menuitem-link">
+            <a pRipple class="flex align-items-center p-menuitem-link" [routerLink]="item.routerLink">
                 <span [class]="item.icon"></span>
                 <span class="ml-2">{{ item.label }}</span>
               
@@ -15,7 +15,7 @@
         <ng-template pTemplate="end">
             <div class="flex align-items-center gap-2">
                 <a [routerLink]="'/login'">
-                    <p-avatar image="./assets/images/avaterdefault.png" shape="circle" />
+                    <p-avatar image="https://i.postimg.cc/xTKNLFT0/avaterdefault.png" shape="circle" />
                 </a>
             </div>
         </ng-template>
