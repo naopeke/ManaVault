@@ -37,7 +37,8 @@ export class HeaderComponent implements OnInit{
               items: [
                   {
                       label: 'All',
-                      icon: 'pi pi-bolt'
+                      icon: 'pi pi-bolt',
+                      routerLink: 'deckbuilder'
                   },
                   {
                       label: 'Add',
