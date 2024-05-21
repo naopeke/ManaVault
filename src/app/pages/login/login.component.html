@@ -1,36 +1,27 @@
-<p>login works!</p>
-
-<div class="card">
-    <h1>Login</h1>
+<div class="card__container">
     <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
         <!-- <form > -->
-            <div class="card flex flex-column md:flex-row gap-3">
-            <p-inputGroup>
-                <p-inputGroupAddon>
-                    <i class="pi pi-user"></i>
-                </p-inputGroupAddon>
-                <input pInputText placeholder="Username" />
-            </p-inputGroup>
-            <p-inputGroup>
-                <p-inputGroupAddon>$</p-inputGroupAddon>
-                <input type="text" pInputText placeholder="Price" />
-                <p-inputGroupAddon>.00</p-inputGroupAddon>
-            </p-inputGroup>
-       
-            <!-- <input 
-            pInputText
-            class="ng-invalid ng-dirty"
-            formControlName="email"
-            placeholder="Email"
-        />
-        <input 
-            pInputText
-            class="ng-invalid ng-dirty"
-            formControlName="password"
-            type="password"
-            placeholder="Password"
-        /> -->
-        <div class="card flex justify-content-center">
+    <div class="card flex flex-column md:flex-column gap-3" style="max-width: 500px;">
+
+        <div class="login__title flex justify-content-center">
+            <h1>Login</h1>
+        </div>
+
+        <p-inputGroup>
+            <p-inputGroupAddon>
+                <i class="pi pi-user"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Username" />
+        </p-inputGroup>
+
+        <p-inputGroup>
+            <p-inputGroupAddon>
+                <i class="pi pi-key"></i>
+            </p-inputGroupAddon>
+            <input pInputText placeholder="Password" />
+        </p-inputGroup>
+
+        <div class="login__button flex justify-content-center">
             <p-button label="Login" />
         </div>
 
