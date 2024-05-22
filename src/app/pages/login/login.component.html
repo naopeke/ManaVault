@@ -1,26 +1,27 @@
 <section class="section__login">
-    
-    <div class="card card-small">
-        <div class="col-12 flex align-items-center justify-content-center">
-            <div class="p-fluid">
-                <div class="field">
-                    <label for="username">Username</label>
-                    <input pInputText id="username" type="text" />
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="card card-small">
+            <div class="col-12 flex align-items-center justify-content-center">
+                <div class="p-fluid">
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input pInputText id="username" type="text" />
+                    </div>
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input pInputText id="password" type="password" />
+                    </div>
+                    <p-button label="Login"></p-button>
                 </div>
-                <div class="field">
-                    <label for="password">Password</label>
-                    <input pInputText id="password" type="password" />
-                </div>
-                <p-button label="Login"></p-button>
+            </div>
+            <div class="col-12">
+                <p-divider layout="horizontal" class="short-devider" width="30">
+                    <b>OR</b>
+                </p-divider>
+            </div>
+            <div class="col-12 flex align-items-center justify-content-center">
+                <p-button label="Sign Up" icon="pi pi-user-plus" styleClass="p-button-success"></p-button>
             </div>
         </div>
-        <div class="col-12">
-            <p-divider layout="horizontal" class="short-devider" width="30">
-                <b>OR</b>
-            </p-divider>
-        </div>
-        <div class="col-12 flex align-items-center justify-content-center">
-            <p-button label="Sign Up" icon="pi pi-user-plus" styleClass="p-button-success"></p-button>
-        </div>
-    </div>
+    </form>
 </section>

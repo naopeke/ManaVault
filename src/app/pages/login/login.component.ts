@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
@@ -23,25 +23,31 @@ export class LoginComponent {
   http = inject(HttpClient);
   router = inject(Router);
 
-  public formGroup!: FormGroup;
+  // public formGroup!: FormGroup;
   value: string | undefined;
   errorMessage: string | null = null;
 
-  constructor(){
-    this.builForm();
-  }
+  // constructor(){
+  //   this.builForm();
+  // }
 
 
-  private builForm(){
-    this.formGroup = this.fb.nonNullable.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]]
-    });
+  // private builForm(){
+  //   this.formGroup = this.fb.nonNullable.group({
+  //     email: ['', [Validators.required]],
+  //     password: ['', [Validators.required]]
+  //   });
     
-  }
+  // }
 
 
-  onSubmit(): void {
+  // onSubmit(): void {
 
+  // }
+
+  constructor(){}
+
+  onSubmit(form: NgForm):void {
+    const { username, password } = form.value;
   }
 }
