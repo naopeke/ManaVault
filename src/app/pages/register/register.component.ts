@@ -27,25 +27,20 @@ export class RegisterComponent {
   value: string | undefined;
   errorMessage: string | null = null;
 
-  // constructor(
-  //   private http: HttpClient, 
-  //   private authService: AuthService, 
-  //   private router: Router) {}
-
-    onSubmit(form: NgForm): void{
-      if (form.valid){
-          const { username, email, password } = form.value;
-          console.log(form.value);
-          this.authService.register(username, email, password)
-              .subscribe({
-                  next: () => {
-                    console.log('register success')
-                      // this.router.navigateByUrl('/home');
-                  },
-                  error: (err) => {
-                      this.errorMessage = err.code;
-                  } 
-              });
-      }
+  onSubmit(form: NgForm): void{
+    if (form.valid){
+        const { username, email, password } = form.value;
+        console.log(form.value);
+        this.authService.register(username, email, password)
+            .subscribe({
+                next: () => {
+                  console.log('register success')
+                    this.router.navigateByUrl('/');
+                },
+                error: (err) => {
+                    this.errorMessage = err.code;
+                } 
+            });
+    }
   }
 }

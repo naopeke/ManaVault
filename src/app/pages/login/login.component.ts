@@ -9,6 +9,7 @@ import { DividerModule } from 'primeng/divider';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 
 
@@ -21,6 +22,7 @@ import { RouterModule } from '@angular/router';
 })
 export class LoginComponent {
   http = inject(HttpClient);
+  authService = inject(AuthService);
   router = inject(Router);
 
   // public formGroup!: FormGroup;
@@ -47,8 +49,20 @@ export class LoginComponent {
 
   constructor(){}
 
-  onSubmit(form: NgForm):void {
-    const { username, password } = form.value;
-    console.log(form.value);
+  onSubmit(form: NgForm): void{
+    if (form.valid){
+        const { email, password } = form.value;
+        console.log(form.value);
+        this.authService.login(email, password)
+            .subscribe({
+                next: () => {
+                  console.log('register success')
+                    this.router.navigateByUrl('/');
+                },
+                error: (err) => {
+                    this.errorMessage = err.code;
+                } 
+            });
+    }
   }
 }
