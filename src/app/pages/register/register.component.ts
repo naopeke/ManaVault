@@ -1,37 +1,43 @@
 import { Component, inject } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
+import { FormsModule, NgForm, Validators } from '@angular/forms';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ButtonModule, FormsModule, InputGroupModule, InputGroupAddonModule, InputTextModule, PasswordModule, DividerModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  fb = inject(FormBuilder);
   http = inject(HttpClient);
   authService = inject(AuthService);
   router = inject(Router);
 
-  form = this.fb.nonNullable.group({
-    username: ['', Validators.required],
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-  });
-
+  value: string | undefined;
   errorMessage: string | null = null;
 
-  onSubmit(): void{
-    const rawForm = this.form.getRawValue();
-    this.authService.register(rawForm.email, rawForm.username, rawForm.password)
-      .subscribe(
-        () => {
-          this.router.navigateByUrl('/login');
-        }
-      )
-  }
+  onSubmit(form: NgForm): void{
+    if (form.valid){
+        const { email, username, password } = form.value;
+        this.authService.register(email, username, password)
+            .subscribe({
+                next: () => {
+                    this.router.navigateByUrl('/home');
+                },
+                error: (err) => {
+                    this.errorMessage = err.code;
+                } 
+            });
+    }
+}
 }
