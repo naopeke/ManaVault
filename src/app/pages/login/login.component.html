@@ -5,11 +5,11 @@
                 <div class="p-fluid">
                     <div class="field">
                         <label for="username">Username</label>
-                        <input pInputText id="username" type="text" />
+                        <input pInputText name="username" type="text" />
                     </div>
                     <div class="field">
                         <label for="password">Password</label>
-                        <input pInputText id="password" type="password" />
+                        <input pInputText name="password" type="password" />
                     </div>
                     <p-button label="Login"></p-button>
                 </div>
@@ -20,7 +20,9 @@
                 </p-divider>
             </div>
             <div class="col-12 flex align-items-center justify-content-center">
-                <p-button label="Sign Up" icon="pi pi-user-plus" styleClass="p-button-success"></p-button>
+                <a [routerLink]="'/register'">
+                    <p-button label="Sign Up" icon="pi pi-user-plus" styleClass="p-button-success"></p-button>
+                </a>
             </div>
         </div>
     </form>
