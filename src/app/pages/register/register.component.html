@@ -8,17 +8,17 @@
       <div class="card card-small">
           <div class="col-12 flex align-items-center justify-content-center">
               <div class="p-fluid">
-                  <div class="field">
+                  <div class="field form-group">
                       <label for="username">Username</label>
-                      <input pInputText name="username" type="text" placeholder="username"/>
+                      <input pInputText name="username" type="text" placeholder="username" ngModel required/>
                   </div>
-                  <div class="field">
+                  <div class="field form-group">
                     <label for="username">Email</label>
-                    <input pInputText name="email" type="email" placeholder="email" />
-                </div>
-                  <div class="field">
+                    <input pInputText name="email" type="email" placeholder="email" ngModel required />
+                  </div>
+                  <div class="field form-group">
                       <label for="password">Password</label>
-                      <input pInputText name="password" type="password" placeholder="password" />
+                      <input pInputText name="password" type="password" placeholder="password" ngModel required />
                   </div>
                   <p-button label="Sign Up" type="submit"></p-button>
               </div>

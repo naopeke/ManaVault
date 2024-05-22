@@ -19,6 +19,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+
   http = inject(HttpClient);
   authService = inject(AuthService);
   router = inject(Router);
@@ -26,18 +27,25 @@ export class RegisterComponent {
   value: string | undefined;
   errorMessage: string | null = null;
 
-  onSubmit(form: NgForm): void{
-    if (form.valid){
-        const { email, username, password } = form.value;
-        this.authService.register(email, username, password)
-            .subscribe({
-                next: () => {
-                    this.router.navigateByUrl('/home');
-                },
-                error: (err) => {
-                    this.errorMessage = err.code;
-                } 
-            });
-    }
-}
+  // constructor(
+  //   private http: HttpClient, 
+  //   private authService: AuthService, 
+  //   private router: Router) {}
+
+    onSubmit(form: NgForm): void{
+      if (form.valid){
+          const { username, email, password } = form.value;
+          console.log(form.value);
+          this.authService.register(username, email, password)
+              .subscribe({
+                  next: () => {
+                    console.log('register success')
+                      // this.router.navigateByUrl('/home');
+                  },
+                  error: (err) => {
+                      this.errorMessage = err.code;
+                  } 
+              });
+      }
+  }
 }
