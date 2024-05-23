@@ -1,8 +1,10 @@
 <h1>Register</h1>
 
-@if (errorMessage) {
+<p-toast position="top-center"></p-toast>
+
+<!-- @if (errorMessage) {
   <div>{{ errorMessage }}</div>
-}
+} -->
 <section class="section__register">
   <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
       <div class="card card-small">
@@ -20,6 +22,10 @@
                       <label for="password">Password</label>
                       <input pInputText name="password" type="password" placeholder="password" ngModel required />
                   </div>
+                  <div class="field form-group">
+                    <label for="password">Confirm Password</label>
+                    <input pInputText name="password" type="password" placeholder="password" ngModel required />
+                </div>
                   <p-button label="Sign Up" type="submit"></p-button>
               </div>
           </div>

@@ -1,5 +1,5 @@
 <div class="card">
-    <p-menubar [model]="items">
+    <p-menubar [model]="navItems">
         <ng-template pTemplate="start">
             <a [routerLink]="'/'">
                 <img src="https://i.postimg.cc/BQW1LG3Y/logo.png" alt="Logo" width="40" height="40" />
@@ -17,6 +17,17 @@
                 <a [routerLink]="'/login'">
                     <p-avatar image="https://i.postimg.cc/xTKNLFT0/avaterdefault.png" shape="circle" />
                 </a>
+            </div>
+            @if(authService.currentUserSig()){
+                <div>
+                    {{authService.currentUserSig()?.username}}
+                    <span (click)="logOut()">Logout</span>
+                </div>
+            }
+
+            <div class="card flex justify-content-center">
+                <p-button label="Sign In" (click)="menu.toggle($event)" />
+                <p-tieredMenu #menu [model]="toggleButtonItems" [popup]="true" />
             </div>
         </ng-template>
     </p-menubar>
