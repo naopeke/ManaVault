@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthService } from './services/auth.service';
+import { environment } from '../environments/environment.development';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,13 @@ export class AppComponent implements OnInit{
   title = 'ManaVault';
 
   authService = inject(AuthService)
+
+  // apiKey = environment.firebaseConfig.apiKey;
+  // authDomain = environment.firebaseConfig.authDomain;
+  // projectId = environment.firebaseConfig.projectId;
+  // storageBucket = environment.firebaseConfig.storageBucket;
+  // messagingSenderId = environment.firebaseConfig.messagingSenderId;
+  // appId = environment.firebaseConfig.appId;
 
   ngOnInit(): void {
     this.authService.user$.subscribe(user => {
